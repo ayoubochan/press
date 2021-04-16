@@ -13,7 +13,7 @@ class Footer extends Component {
   }
 
   register() {
-    fetch('https://e-press.fr/api/register',
+    fetch('http://152.228.218.100:5000/api/register',
     {
       method: 'POST',
       headers: new Headers({

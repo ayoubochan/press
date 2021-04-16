@@ -24,7 +24,7 @@ class Category extends Component {
   }
 
   fetchCategory() {
-    fetch('https://e-press.fr/api/category',
+    fetch('http://152.228.218.100:5000/api/category',
     {
       method: 'POST',
       headers: new Headers({

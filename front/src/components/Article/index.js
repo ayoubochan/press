@@ -22,7 +22,7 @@ class Article extends Component {
   }
 
   fetchData() {
-    fetch('https://e-press.fr/api/article',
+    fetch('http://152.228.218.100:5000/api/article',
     {
       method: 'POST',
       headers: new Headers({
