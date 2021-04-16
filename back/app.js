@@ -6,11 +6,6 @@ const port = 5000
 const cors = require('cors')
 const path = require('path')
 
-connexion.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-
-
   app.use(cors({
     origin: '*'
   }))
@@ -20,6 +15,7 @@ connexion.connect(function(err) {
   
   
   app.get('/api/articles', (req, res) => {
+    console.log('Ok')
     connexion.query(`SELECT * FROM articles ORDER BY id DESC`, (err, result) => {
       if (err) res.sendStatus(400)
       else {
@@ -81,7 +77,6 @@ connexion.connect(function(err) {
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../front/public/index.html'))
   })
-}); 
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)

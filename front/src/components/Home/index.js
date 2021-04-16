@@ -13,7 +13,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    fetch('https://e-press.fr/api/articles')
+    fetch('https://localhost:5000/api/articles')
     .then(res => res.json())
     .then(data => {
       this.setState({articles: data})
