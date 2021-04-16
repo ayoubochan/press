@@ -13,6 +13,16 @@ const path = require('path')
   app.use(bodyParser.json({limit: '10mb'}))
   app.use(bodyParser.urlencoded({extended: true, limit: '10mb'}))
   
+  app.get('/', (req, res) => {
+    console.log('racine')
+    connexion.query(`SELECT * FROM articles`, (err, result) => {
+      if (err) res.sendStatus(400)
+      else {
+          console.log(result.length)
+  
+      }
+    })
+  })
   
   app.get('/api/articles', (req, res) => {
     console.log('Ok')
